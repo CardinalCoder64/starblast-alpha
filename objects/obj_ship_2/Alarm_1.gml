@@ -1,0 +1,2 @@
+golden = false;
+trishot = false;

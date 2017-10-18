@@ -1,0 +1,19 @@
+if !gamepad_is_connected(0) {
+	code3[0] = ord("A");
+	code3[1] = ord("D");
+	code3[2] = ord("S");
+	code3[3] = ord("W");
+	code3[4] = ord("A");
+	code3[5] = ord("D");
+	code3[6] = ord("S");
+	code3[7] = ord("W");
+} else {
+	code3[0] = gp_padl;
+	code3[1] = gp_padr;
+	code3[2] = gp_padd;
+	code3[3] = gp_padu;
+	code3[4] = gp_padl;
+	code3[5] = gp_padr;
+	code3[6] = gp_padd;
+	code3[7] = gp_padu;
+}

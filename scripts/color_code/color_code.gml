@@ -1,0 +1,41 @@
+//Player 1 code
+if !gamepad_is_connected(0) {
+	code1[0] = ord("W");
+	code1[1] = ord("S");
+	code1[2] = ord("A");
+	code1[3] = ord("D");
+	code1[4] = ord("A");
+	code1[5] = ord("D");
+	code1[6] = ord("S");
+	code1[7] = ord("W");
+} else {
+	code1[0] = gp_padu;
+	code1[1] = gp_padd;
+	code1[2] = gp_padl;
+	code1[3] = gp_padr;
+	code1[4] = gp_padl;
+	code1[5] = gp_padr;
+	code1[6] = gp_padd;
+	code1[7] = gp_padu;
+}
+
+//Player 2 code
+if !gamepad_is_connected(1) {
+	code2[0] = vk_up;
+	code2[1] = vk_down;
+	code2[2] = vk_left;
+	code2[3] = vk_right;
+	code2[4] = vk_left;
+	code2[5] = vk_right;
+	code2[6] = vk_down;
+	code2[7] = vk_up;
+} else {
+	code2[0] = gp_padu;
+	code2[1] = gp_padd;
+	code2[2] = gp_padl;
+	code2[3] = gp_padr;
+	code2[4] = gp_padl;
+	code2[5] = gp_padr;
+	code2[6] = gp_padd;
+	code2[7] = gp_padu;
+}

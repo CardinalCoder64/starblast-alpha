@@ -1,0 +1,1 @@
+alarm[0] = round(random_range(bullet_delay*2,bullet_delay*6));

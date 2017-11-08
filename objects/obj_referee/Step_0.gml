@@ -13,12 +13,6 @@ if !gamepad_is_connected(1) {
 
 if next1 || next2 {
 	if p1_won || p2_won {
-		if count > high_score {
-			high_score = count;
-			ini_open("High.score");
-			ini_write_real("Stats","High Score",high_score);
-			ini_close();
-		}
 		room_restart();
 		global.pause = false;
 	}

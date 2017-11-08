@@ -46,7 +46,6 @@ if bbox_left < 2 ^^ bbox_right > room_width-2 {
 		}
 	}
 	instance_create_depth(120,120,other.depth,obj_ball);
-	obj_referee.count = 0;
 	audio_play_sound(snd_hurt,1,0);
 	instance_create_depth(x,y,depth,obj_ball_animate);
 	instance_destroy();

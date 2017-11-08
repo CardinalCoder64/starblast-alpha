@@ -9,6 +9,10 @@ var white = make_color_rgb(255,255,255);
 var yellow = make_color_rgb(252,184,0);
 draw_set_font(fnt_default);
 
+ini_open("High.score");
+var last_hs = ini_read_real("Stats","High Score",high_score);
+ini_close();
+
 //Draw grid
 //draw_sprite(spr_grid,0,0,0);
 
@@ -126,9 +130,8 @@ if p2_won {
 		instance_destroy();
 	}
 	draw_text(x_center,y_center-24,"PLAYER 2 WINS!");
-	draw_set_color(white);
-	if count > high_score {
-		draw_set_color(yellow);
+	draw_set_color(yellow);
+	if high_score > last_hs {
 		draw_text(x_center,y_center,"HIGH SCORE: "+string(count));
 	} else {
 		draw_text(x_center,y_center,"HIGH SCORE: "+string(high_score));		
@@ -181,9 +184,8 @@ if p1_won {
 		instance_destroy();
 	}
 	draw_text(x_center,y_center-24,"PLAYER 1 WINS!");
-	draw_set_color(white);
-	if count > high_score {
-		draw_set_color(yellow);
+	draw_set_color(yellow);
+	if high_score > last_hs {
 		draw_text(x_center,y_center,"HIGH SCORE: "+string(count));
 	} else {
 		draw_text(x_center,y_center,"HIGH SCORE: "+string(high_score));		
@@ -238,3 +240,9 @@ if global.pause {
 }
 
 if global.mute draw_sprite(spr_mute,0,0,room_height-8);
+
+if high_score > last_hs {
+	ini_open("High.score");
+	ini_write_real("Stats","High Score",high_score);
+	ini_close();
+}
